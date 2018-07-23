@@ -2,7 +2,7 @@
 
 
 $method = $_SERVER['REQUEST_METHOD'];
-
+$speech="";
 //process only when method id post
 if($method == 'POST'){
 	
