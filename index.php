@@ -2,7 +2,7 @@
 
 
 $method = $_SERVER['REQUEST_METHOD'];
-<form method="POST" action="chatBot">
+
 //process only when method id post
 if($method == 'POST'){
 	
@@ -34,5 +34,5 @@ else
 {
 	echo "Method not allowed";
 }
-</form>
+
 ?>
