@@ -2,7 +2,7 @@
 
 
 $method = $_SERVER['REQUEST_METHOD'];
-<form name="form1" method="POST" action="chatBot">
+<form method="POST" action="chatBot">
 //process only when method id post
 if($method == 'POST'){
 	
