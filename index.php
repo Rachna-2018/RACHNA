@@ -23,7 +23,7 @@ if($method == 'POST'){
 		break;
 			
 		default:
-		$speech = "Sorry, I didnot get that.";
+		$speech = "Sorry, Say something else";
 		break;
 	
 	}
