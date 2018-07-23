@@ -13,7 +13,7 @@ if($method == 'POST'){
 	{
 		$speech="Hi, Nice to meet you";
 	}
-	else if ($text=='bye')
+	elseif ($text=='bye')
 	{
 		$speech="Bye, good night";
 	}
