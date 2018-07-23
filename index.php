@@ -11,15 +11,15 @@ if($method == 'POST'){
 	$text = $json->result->parameters->text;
 	if ($text=='hi')
 	{
-		$speech = "Hi, Nice to meet you";
+		$speech="Hi, Nice to meet you";
 	}
 	else if ($text=='bye')
 	{
-		$speech = "Bye, good night";
+		$speech="Bye, good night";
 	}
 	elseif($text=='anything')
 	{
-		$speech = "Sorry, I didnot get that.";
+		$speech="Sorry, I didnot get that.";
 	}
 	else
 	{
