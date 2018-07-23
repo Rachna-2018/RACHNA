@@ -9,21 +9,13 @@ if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 	$text = $json->result->parameters->text;
-	if ($text=='hi')
+	if ($text=='Hana')
 	{
-		$speech="Hi, Nice to meet you";
-	}
-	elseif ($text=='bye')
-	{
-		$speech="Bye, good night";
-	}
-	elseif($text=='anything')
-	{
-		$speech="Sorry, I didnot get that.";
+		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
 	}
 	else
 	{
-		$speech="something else";
+		$speech="Input something else";
 	}
 $response = new \stdClass();
     $response->fulfillmentText = $speech;
