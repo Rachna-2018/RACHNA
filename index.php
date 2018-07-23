@@ -19,6 +19,10 @@ if($method == 'POST'){
 		break;
 
 		case 'anything':
+		$speech = "Yes, You can type anything here";
+		break;
+			
+		default:
 		$speech = "Sorry, I didnot get that.";
 		break;
 	
