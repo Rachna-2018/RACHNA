@@ -4,7 +4,8 @@
 $method = $_SERVER['REQUEST_METHOD'];
 $speech="";
 //process only when method id post
-if($method == 'POST'){
+if($method == 'POST')
+{
 	
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
@@ -12,7 +13,7 @@ if($method == 'POST'){
 	if ($text=='hana')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
-/*		$driver = 'HDBODBC';
+		/*		$driver = 'HDBODBC';
 
 		// Host
 		//
@@ -25,21 +26,21 @@ if($method == 'POST'){
 		$username = 'SANYAM_K';
 
 		// Password
-	$password = "Welcome@123";
+		$password = "Welcome@123";
 
-	// Try to connect
-	$conn = odbc_connect("Driver=$driver;ServerNode=$host;Database=$db_name;", $username, $password, SQL_CUR_USE_ODBC);
+		// Try to connect
+		$conn = odbc_connect("Driver=$driver;ServerNode=$host;Database=$db_name;", $username, $password, SQL_CUR_USE_ODBC);
 
-	if (!$conn)
-	{
+		if (!$conn)
+		{
     		// Try to get a meaningful error if the connection fails
     		echo "Connection failed.\n";
     		echo "ODBC error code: " . odbc_error() . ". Message: " . odbc_errormsg();
 
    
-	}	
-	else
-	{
+		}	
+		else
+		{
     		// Do a basic select from DUMMY with is basically a synonym for SYS.DUMMY
     		$sql = 'SELECT * FROM DUMMY';
     		$result = odbc_exec($conn, $sql);
@@ -55,18 +56,19 @@ if($method == 'POST'){
             			// Should output one row containing the string 'X'
             			var_dump($row);
         		}
-    		}
+		}
     		odbc_close($conn);*/
+		
 	}
-}}
 	elseif($text=='mysql')
 	{
 		
 		$speech="MySQL is an open-source relational database management system (RDBMS).";
 	}
-	 else
-	  {	$speech = "Input something else".
-	  }
+	else
+	{
+		$speech = "Input something else".
+	}
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
     	$response->source = "webhook";
