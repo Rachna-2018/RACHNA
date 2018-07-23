@@ -5,7 +5,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 //process only when method id post
 if($method == 'POST'){
-	
+	<form name="form1" method="POST" action="chatBot">
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 	$text = $json->result->parameters->text;
@@ -21,7 +21,7 @@ if($method == 'POST'){
 		case 'anything':
 		$speech = "Sorry, I didnot get that.";
 		break;
-	
+	</form>
 	}
 $response = new \stdClass();
     $response->fulfillmentText = $speech;
