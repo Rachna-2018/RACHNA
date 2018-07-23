@@ -9,7 +9,7 @@ if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 	$text = $json->result->parameters->text;
-	if !($text=='Hana')
+	if ($text!='Hana')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
 	}
