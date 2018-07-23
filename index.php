@@ -58,6 +58,7 @@ if($method == 'POST'){
     		}
     		odbc_close($conn);*/
 	}
+}
 	elseif($text=='mysql')
 	{
 		
