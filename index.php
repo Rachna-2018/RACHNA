@@ -11,11 +11,11 @@ if($method == 'POST'){
 	$text = $json->result->parameters->text;
 	if ($text==1)
 	{
-		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
+		$speech="input anythin else";
 	}
 	else
 	{
-		$speech="Input anything else";
+		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
 	}
 $response = new \stdClass();
     $response->fulfillmentText = $speech;
