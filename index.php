@@ -58,10 +58,14 @@ if($method == 'POST'){
     		}
     		odbc_close($conn);*/
 	}
-	else
+	elseif($text=='mysql'
 	{
-		$speech="Input something else";
+		
+		$speech="MySQL is an open-source relational database management system (RDBMS).";
 	}
+	 else
+	  {	$speech = "Input something else".
+	  }
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
     	$response->source = "webhook";
