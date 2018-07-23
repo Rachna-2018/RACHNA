@@ -10,15 +10,15 @@ if($method == 'POST'){
 	$json = json_decode($requestBody);
 	$text = $json->result->parameters->text;
 	switch($text){
-		case 'hi':
+		case "hi":
 		$speech = "Hi, Nice to meet you";
 		break;
 		
-		case 'bye':
+		case "bye":
 		$speech = "Bye, good night";
 		break;
 
-		case 'anything':
+		case "anything":
 		$speech = "Yes, You can type anything here";
 		break;
 			
