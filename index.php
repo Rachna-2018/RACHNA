@@ -10,7 +10,7 @@ if($method == 'POST')
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 	$text = $json->queryResult->parameters->text;
-	if ($text=='hana')
+	if ($text=='hana' || $text=='HANA' || $text == 'Hana')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
 		/*		$driver = 'HDBODBC';
@@ -61,7 +61,7 @@ if($method == 'POST')
 		
 		
 	}
-	else if($text=='mysql')
+	else if($text=='mysql' || $text == 'MySQL' || $text == 'MySql')
 	{
 		
 		$speech="MySQL is an open-source relational database management system (RDBMS).";
