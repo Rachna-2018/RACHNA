@@ -66,6 +66,13 @@ if($method == 'POST')
 		
 		$speech="MySQL is an open-source relational database management system (RDBMS).";
 	}
+	else if (strlen($text) > 1){
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, "https://www.google.com/search?q=$show");
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_exec($ch);
+	curl_close($ch);			
+	} 
 	else
 	{
 		$speech = "Input something else";
