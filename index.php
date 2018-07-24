@@ -10,7 +10,7 @@ if($method == 'POST')
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 	$text = $json->queryResult->parameters->text;
-	/*if ($text=='hana' || $text=='HANA' || $text == 'Hana')
+	if ($text=='hana' || $text=='HANA' || $text == 'Hana')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
 		/*		$driver = 'HDBODBC';
@@ -57,7 +57,7 @@ if($method == 'POST')
             			var_dump($row);
         		}
 		}
-    		odbc_close($conn);
+    		odbc_close($conn);*/
 		
 		
 	}
@@ -65,14 +65,7 @@ if($method == 'POST')
 	{
 		
 		$speech="MySQL is an open-source relational database management system (RDBMS).";
-	}*/
-	if (strlen($text) > 1){
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "https://www.google.com/search?q=$show");
-	curl_setopt($ch, CURLOPT_HEADER, 0);
-	curl_exec($ch);
-	curl_close($ch);			
-	} 
+	}
 	else
 	{
 		$speech = "Input something else";
