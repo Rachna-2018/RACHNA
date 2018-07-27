@@ -15,7 +15,7 @@ if($method == 'POST')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
 		
-		//method1
+//method1
 		/*$ch = curl_init();
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -24,7 +24,7 @@ if($method == 'POST')
 		$json = curl_exec($ch);
 		curl_close($ch);*/
 		
-		//method2
+//method2
 		/*$username='SANYAM_K';
 		$password='Welcome@123';
 		$URL='http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs';
@@ -40,23 +40,37 @@ if($method == 'POST')
 		curl_close ($ch);*/
 		
 		
-		//method3
-		$postData = array(
-    'login' => 'SANYAM_K',
-    'pwd' => 'Welcome@123',
-    'redirect_to' => 'http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs',
-    'testcookie' => '1'
-);
+//method3
+		/*$postData = array(
+   		 'login' => 'SANYAM_K',
+    		'pwd' => 'Welcome@123',
+    		'redirect_to' => 'http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs',
+    		'testcookie' => '1'
+		);
 
-curl_setopt_array($ch, array(
-    CURLOPT_URL => 'http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs',
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => $postData,
-    CURLOPT_FOLLOWLOCATION => true
-));
-
-		$json = curl_exec($ch);
+		curl_setopt_array($ch, array(
+		    CURLOPT_URL => 'http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs',
+		    CURLOPT_RETURNTRANSFER => true,
+		    CURLOPT_POST => true,
+		    CURLOPT_POSTFIELDS => $postData,
+		    CURLOPT_FOLLOWLOCATION => true
+		));
+		$json = curl_exec($ch);*/
+//method4
+		$username='SANYAM_K';
+		$password='Welcome@123';
+		$URL='http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs';
+		$ch = curl_init($url);
+		curl_setopt($ch, CURLOPT_URL,$URL);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout after 30 seconds
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+		curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+		$json=curl_exec ($ch);
+		//$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
+		curl_close ($ch);
+ 
+		
 		$file = json_decode($json);
 		$database = $file->DATABASE_NAME;
 		$speech = "Database name is $database" ;
