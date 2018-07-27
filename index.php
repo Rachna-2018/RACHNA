@@ -26,7 +26,7 @@ if($method == 'POST')
 		// Password
 		$password = "Welcome@123";
 		// Try to connect
-		$conn = odbc_connect("Driver=$driver;ServerNode=$host;Database=$db_name;$username,$password, SQL_CUR_USE_ODBC);
+		$conn = odbc_connect("Driver=$driver;ServerNode=$host;Database=$db_name;",$username,$password, SQL_CUR_USE_ODBC);
 		    $speech += " ";
 		    $speech += "connection done";
     		odbc_close($conn);
