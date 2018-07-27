@@ -1,8 +1,9 @@
 <?php
 
-
 $method = $_SERVER['REQUEST_METHOD'];
+//$method = 'POST';
 $speech="";
+//$text='hana';
 //process only when method id post
 if($method == 'POST')
 {
@@ -13,31 +14,23 @@ if($method == 'POST')
 	if ($text=='hana' || $text=='HANA' || $text == 'Hana')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
-		/*		$driver = 'HDBODBC';
-
+		$driver = 'HDBODBC';
 		// Host
 		//
-		$host = "10.70.177.14:30015";
-
+		$host = "74.201.240.43:8000";
 		// Default name of your hana instance
 		$db_name = "CH1";
-
 		// Username
 		$username = 'SANYAM_K';
-
 		// Password
 		$password = "Welcome@123";
-
 		// Try to connect
-		$conn = odbc_connect("Driver=$driver;ServerNode=$host;Database=$db_name;", $username, $password, SQL_CUR_USE_ODBC);
-
+		$conn = odbc_connect("Driver=$driver;ServerNode=$host;Database=$db_name;", $username, 		$password, SQL_CUR_USE_ODBC);
 		if (!$conn)
 		{
     		// Try to get a meaningful error if the connection fails
     		echo "Connection failed.\n";
     		echo "ODBC error code: " . odbc_error() . ". Message: " . odbc_errormsg();
-
-   
 		}	
 		else
 		{
@@ -57,7 +50,8 @@ if($method == 'POST')
             			var_dump($row);
         		}
 		}
-    		odbc_close($conn);*/
+		}
+    		odbc_close($conn);
 		
 		
 	}
@@ -83,3 +77,4 @@ else
 }
 
 ?>
+
