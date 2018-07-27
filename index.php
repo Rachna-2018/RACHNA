@@ -14,7 +14,7 @@ if($method == 'POST')
 	if ($text=='hana' || $text=='HANA' || $text == 'Hana')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
-		$driver = 'HDBODBC';
+		/*$driver = 'HDBODBC';
 		// Host
 		//
 		$host = "74.201.240.43:8000";
@@ -51,7 +51,7 @@ if($method == 'POST')
         		}
 		}
 		}
-    		odbc_close($conn);
+    		odbc_close($conn);*/
 		
 		
 	}
