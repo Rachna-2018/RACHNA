@@ -75,13 +75,12 @@ if($method == 'POST')
 		$remote_url = 'http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs';
 
 		// Create a stream
-		$opts = array(
-		  'http'=>array(
-  			  'method'=>"GET",
-  			  'header' => "Authorization: Basic " . base64_encode("$username:$password")                 
- 			 ));
-		$context = stream_context_create($opts);
-
+		$context = stream_context_create(array(
+    		'http' => array(
+     		   'header'  => "Authorization: Basic " . base64_encode("$username:$password")
+   		 )
+		));
+				
 		// Open the file using the HTTP headers set above
 		$json = file_get_contents($remote_url, false, $context);
 		
