@@ -72,7 +72,7 @@ if($method == 'POST')
 //method5
 		$username = "SANYAM_K";
 		$password = "Welcome@123";
-		$remote_url = 'http://www.somedomain.com/path/to/file';
+		$remote_url = 'http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs';
 
 		// Create a stream
 		$opts = array(
