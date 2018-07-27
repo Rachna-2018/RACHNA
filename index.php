@@ -15,18 +15,19 @@ if($method == 'POST')
 	if ($text=='hana' || $text=='HANA' || $text == 'Hana')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
-		$driver = 'HDBODBC';
+		//$driver = 'HDBODBC';
 		// Host
 		//
-		$host = "74.201.240.43:8000";
+		//$host = "74.201.240.43:8000";
 		// Default name of your hana instance
-		$db_name = "CH1";
+		//$db_name = "CH1";
 		// Username
 		$username = 'SANYAM_K';
 		// Password
 		$password = "Welcome@123";
 		// Try to connect
-		$conn = odbc_connect("Driver=$driver;ServerNode=$host;Database=$db_name;",$username,$password, SQL_CUR_USE_ODBC);
+		$odbc="chatbot";
+		$conn = odbc_connect($odbc,$username,$password, SQL_CUR_USE_ODBC);
 		    $speech += " ";
 		    $speech += "connection done";
     		odbc_close($conn);
