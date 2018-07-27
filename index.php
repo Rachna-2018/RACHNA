@@ -5,6 +5,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 $speech="";
 //$text='hana';
 //process only when method id post
+
 if($method == 'POST')
 {
 	
@@ -26,32 +27,10 @@ if($method == 'POST')
 		$password = "Welcome@123";
 		// Try to connect
 		$conn = odbc_connect("Driver=$driver;ServerNode=$host;Database=$db_name;$username,$password, SQL_CUR_USE_ODBC);
-		if (!$conn)
-		{
-    		// Try to get a meaningful error if the connection fails
-    		echo "Connection failed.\n";
-    		echo "ODBC error code: " . odbc_error() . ". Message: " . odbc_errormsg();
-		}	
-		else
-		{
-    		// Do a basic select from DUMMY with is basically a synonym for SYS.DUMMY
-    		$sql = 'SELECT * FROM DUMMY';
-    		$result = odbc_exec($conn, $sql);
-    		if (!$result)
-    		{
-		        echo "Error while sending SQL statement to the database server.\n";
-        		echo "ODBC error code: " . odbc_error() . ". Message: " . odbc_errormsg();
-    		}
-    		else
-    		{
-        		while ($row = odbc_fetch_object($result))
-        		{
-            			// Should output one row containing the string 'X'
-            			var_dump($row);
-        		}
-		}
-		}
+		    $speech += " ";
+		    $speech += "connection done";
     		odbc_close($conn);
+		
 		
 		
 		
