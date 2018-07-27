@@ -24,7 +24,7 @@ if($method == 'POST')
 		curl_close($ch);*/
 		ini_set("allow_url_fopen", 1);
 		$json = file_get_contents('http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs');
-		$file = json_decode($test_file);
+		$file = json_decode($json);
 		$database = $file->DATABASE_NAME;
 		$speech = "Database name is $database" ;
 	
