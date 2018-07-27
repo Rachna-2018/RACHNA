@@ -1,9 +1,8 @@
 <?php
 
 $method = $_SERVER['REQUEST_METHOD'];
-//$method = 'POST';
-$speech="";
-//$text='hana';
+
+
 //process only when method id post
 
 if($method == 'POST')
@@ -15,6 +14,7 @@ if($method == 'POST')
 	if ($text=='hana' || $text=='HANA' || $text == 'Hana')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
+		
 		/*$ch = curl_init();
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -22,7 +22,7 @@ if($method == 'POST')
 		curl_setopt($ch, CURLOPT_HEADER, 0);
 		$test_file = curl_exec($ch);
 		curl_close($ch);*/
-		ini_set("allow_url_fopen", 1);
+		
 		$json = file_get_contents('http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs');
 		$file = json_decode($json);
 		$database = $file->DATABASE_NAME;
