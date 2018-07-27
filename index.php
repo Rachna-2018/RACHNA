@@ -24,7 +24,7 @@ if($method == 'POST')
 		curl_close($ch);
 		$file = json_decode($test_file);
 		$database = $file->DATABASE_NAME;
-		$speech = "Database name is $database" ;
+		$speech += "  Database name is $database" ;
 	
 		
 		/*$ch = curl_init();
