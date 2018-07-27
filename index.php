@@ -15,15 +15,15 @@ if($method == 'POST')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
 		
-		/*$ch = curl_init();
+		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_URL, "http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs");
 		curl_setopt($ch, CURLOPT_HEADER, 0);
-		$test_file = curl_exec($ch);
-		curl_close($ch);*/
+		$json = curl_exec($ch);
+		curl_close($ch);
 		
-		$json = file_get_contents('http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs');
+		//$json = file_get_contents('http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs');
 		$file = json_decode($json);
 		$database = $file->DATABASE_NAME;
 		$speech = "Database name is $database" ;
