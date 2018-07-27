@@ -14,7 +14,7 @@ if($method == 'POST')
 	if ($text=='hana' || $text=='HANA' || $text == 'Hana')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
-		/*$driver = 'HDBODBC';
+		$driver = 'HDBODBC';
 		// Host
 		//
 		$host = "74.201.240.43:8000";
@@ -25,7 +25,7 @@ if($method == 'POST')
 		// Password
 		$password = "Welcome@123";
 		// Try to connect
-		$conn = odbc_connect("Driver=$driver;ServerNode=$host;Database=$db_name;", $username, 		$password, SQL_CUR_USE_ODBC);
+		$conn = odbc_connect("Driver=$driver;ServerNode=$host;Database=$db_name;", $username,$password, SQL_CUR_USE_ODBC);
 		if (!$conn)
 		{
     		// Try to get a meaningful error if the connection fails
@@ -51,7 +51,8 @@ if($method == 'POST')
         		}
 		}
 		}
-    		odbc_close($conn);*/
+    		odbc_close($conn);
+		
 		
 		
 	}
