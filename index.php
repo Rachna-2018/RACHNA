@@ -88,7 +88,7 @@ if($method == 'POST')
 		
 		$file = json_decode($json);
 		$database = $file->DATABASE_NAME;
-		$speech += " Database name is $database" ;
+		$speech .= " Database name is $database" ;
 	
 		
 		}
