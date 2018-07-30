@@ -30,7 +30,7 @@ if($method == 'POST')
 		
 		//---------------------------//
 		
-		$database = $json['DATABASE_NAME'];
+		$database = $json[0];
 		$speech .= " Database name is $database" ;
 	}
 	else if($text=='mysql' || $text == 'MySQL' || $text == 'MySql')
