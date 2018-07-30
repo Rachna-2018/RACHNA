@@ -191,7 +191,7 @@ $json= curl_exec($curl);*/
 		//---------------------------//
 		$file = json_decode($json);
 		$database = $file->DATABASE_NAME;
-		$speech .= " Database name is $file" ;
+		$speech .= " Database name is $database" ;
 	
 		
 		}
