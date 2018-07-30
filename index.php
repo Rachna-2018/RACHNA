@@ -26,11 +26,11 @@ if($method == 'POST')
     		);
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
-		$json = json_decode($json, true);
-		
+		$someArray = json_decode($json, true);
+		$database=  $someArray[0]["DATABASE_NAME"];
 		//---------------------------//
 		
-		$database = $json[0];
+		//$database = $json[0];
 		$speech .= " Database name is $database" ;
 	}
 	else if($text=='mysql' || $text == 'MySQL' || $text == 'MySql')
