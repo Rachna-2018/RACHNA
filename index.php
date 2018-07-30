@@ -159,7 +159,7 @@ if(curl_errno($curl)){
 		//---------------------------//
 		$file = json_decode($json);
 		$database = $file->DATABASE_NAME;
-		$speech .= " Database name is $database" ;
+		$speech .= " Database name is $file" ;
 	
 		
 		}
