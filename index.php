@@ -59,8 +59,8 @@ if($method == 'POST')
 //method4
 		$username='SANYAM_K';
 		$password='Welcome@123';
-		$URL='http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs';
-		$ch = curl_init($URL);
+		$URL='http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs';
+		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL,$URL);
 		curl_setopt($ch,CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout after 30 seconds
@@ -68,6 +68,7 @@ if($method == 'POST')
 		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
 		curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
 		$json=curl_exec ($ch);
+		//print "curl response is:" . $json;
 		//$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
 		curl_close ($ch);
 //method5
