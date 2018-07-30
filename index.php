@@ -19,7 +19,7 @@ if($method == 'POST')
 		/*$ch = curl_init();
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_URL, "http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs");
+		curl_setopt($ch, CURLOPT_URL, "http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs");
 		curl_setopt($ch, CURLOPT_HEADER, 0);
 		$json = curl_exec($ch);
 		curl_close($ch);*/
@@ -27,7 +27,7 @@ if($method == 'POST')
 //method2
 		/*$username='SANYAM_K';
 		$password='Welcome@123';
-		$URL='http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs';
+		$URL='http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs';
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL,$URL);
@@ -44,12 +44,12 @@ if($method == 'POST')
 		/*$postData = array(
    		 'login' => 'SANYAM_K',
     		'pwd' => 'Welcome@123',
-    		'redirect_to' => 'http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs',
+    		'redirect_to' => 'http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs',
     		'testcookie' => '1'
 		);
 
 		curl_setopt_array($ch, array(
-		    CURLOPT_URL => 'http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs',
+		    CURLOPT_URL => 'http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs',
 		    CURLOPT_RETURNTRANSFER => true,
 		    CURLOPT_POST => true,
 		    CURLOPT_POSTFIELDS => $postData,
@@ -74,7 +74,7 @@ if($method == 'POST')
 //method5
 		/*$username = "SANYAM_K";
 		$password = "Welcome@123";
-		$remote_url = 'http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs';
+		$remote_url = 'http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs';
 
 		// Create a stream
 		$context = stream_context_create(array(
