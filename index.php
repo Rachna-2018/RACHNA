@@ -1,18 +1,7 @@
 <?php
 
 $method = $_SERVER['REQUEST_METHOD'];
-$username='SANYAM_K';
-		$password='Welcome@123';
-		$URL='http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs';
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL,$URL);
-		//curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout after 30 seconds
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
-		curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
-		$json=curl_exec ($ch);
-		//$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
-		curl_close ($ch);
+
 
 //process only when method id post
 
@@ -68,20 +57,21 @@ if($method == 'POST')
 		));
 		$json = curl_exec($ch);*/
 //method4
-	/*	$username='SANYAM_K';
+		$username='SANYAM_K';
 		$password='Welcome@123';
 		$URL='http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs';
 		$ch = curl_init($URL);
 		curl_setopt($ch, CURLOPT_URL,$URL);
+		curl_setopt($ch,CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout after 30 seconds
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
 		curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
 		$json=curl_exec ($ch);
 		//$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
-		curl_close ($ch);*/
+		curl_close ($ch);
 //method5
-		$username = "SANYAM_K";
+		/*$username = "SANYAM_K";
 		$password = "Welcome@123";
 		$remote_url = 'http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs';
 
@@ -93,17 +83,14 @@ if($method == 'POST')
 		));
 				
 		// Open the file using the HTTP headers set above
-		$json = file_get_contents($remote_url, false, $context);
+		$json = file_get_contents($remote_url, false, $context);*/
 		
 		$file = json_decode($json);
 		$database = $file->DATABASE_NAME;
 		$speech = "Database name is $database" ;
 	
 		
-		/*$json = file_get_contents('url_here');
-		$obj = json_decode($json);
-		echo $obj->access_token;*/	
-	}
+		}
 	else if($text=='mysql' || $text == 'MySQL' || $text == 'MySql')
 	{
 		
@@ -116,8 +103,7 @@ if($method == 'POST')
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
     	$response->source = "webhook";
-	//$response->displayText= "";
-    	echo json_encode($response);
+	echo json_encode($response);
 
 }
 else
