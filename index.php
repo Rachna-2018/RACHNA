@@ -190,7 +190,7 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 $json= curl_exec($curl);*/
 		//---------------------------//
 		$file = json_decode($json);
-		$database = $file->DATABASE_NAME;
+		$database = $file->{'DATABASE_NAME'};
 		$speech .= " Database name is $database" ;
 	
 		
