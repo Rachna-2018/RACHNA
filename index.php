@@ -57,7 +57,7 @@ if($method == 'POST')
 		));
 		$json = curl_exec($ch);*/
 //method4
-		$username='SANYAM_K';
+		/*$username='SANYAM_K';
 		$password='Welcome@123';
 		$URL='http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs';
 		$ch = curl_init();
@@ -70,21 +70,21 @@ if($method == 'POST')
 		$json=curl_exec ($ch);
 		//print "curl response is:" . $json;
 		//$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
-		curl_close ($ch);
+		curl_close ($ch);*/
 //method5
-		/*$username = "SANYAM_K";
+		$username = "SANYAM_K";
 		$password = "Welcome@123";
 		$remote_url = 'http://74.201.240.43:8000/ChatBot/chatbot/hana_demo.xsjs';
 
 		// Create a stream
 		$context = stream_context_create(array(
     		'http' => array(
-     		   'header'  => "Authorization: Basic " . base64_encode("$username:$password")
+     		   'header'  => "Authentication: Basic " . base64_encode("$username:$password")
    		 )
 		));
 				
 		// Open the file using the HTTP headers set above
-		$json = file_get_contents($remote_url, false, $context);*/
+		$json = file_get_contents($remote_url, false, $context);
 		
 		$file = json_decode($json);
 		$database = $file->DATABASE_NAME;
