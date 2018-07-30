@@ -124,6 +124,7 @@ curl_setopt($curl, CURLOPT_URL, LOGIN_ACTION_URL);
 //Tell cURL that we want to carry out a POST request.
 curl_setopt($curl, CURLOPT_POST, true);
 
+		curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 //Set our post fields / date (from the array above).
 curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($postValues));
 
