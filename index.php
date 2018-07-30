@@ -26,7 +26,7 @@ if($method == 'POST')
     		);
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
-		//$json = json_decode($json, true);
+		$json = json_decode($json, true);
 		
 		//---------------------------//
 		//$file = json_decode($json);
