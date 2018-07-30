@@ -14,32 +14,25 @@ if($method == 'POST')
 	if ($text=='hana' || $text=='HANA' || $text == 'Hana')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
-		
-
-		
 		$username    = "SANYAM_K";
-    $password    = "Welcome@123";
-    $json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs";
-
-    $ch      = curl_init( $json_url );
-    $options = array(
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_USERPWD        => "{$username}:{$password}",
-        CURLOPT_HTTPHEADER     => array( "Accept: application/json" ),
-    );
-    curl_setopt_array( $ch, $options );
-
-    $json = curl_exec( $ch );
-
-
+    		$password    = "Welcome@123";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs";
+		$ch      = curl_init( $json_url );
+    		$options = array(
+        	CURLOPT_SSL_VERIFYPEER => false,
+        	CURLOPT_RETURNTRANSFER => true,
+        	CURLOPT_USERPWD        => "{$username}:{$password}",
+        	CURLOPT_HTTPHEADER     => array( "Accept: application/json" ),
+    		);
+    		curl_setopt_array( $ch, $options );
+		$json = curl_exec( $ch );
+		$json = json_decode($json, true);
+		
 		//---------------------------//
 		//$file = json_decode($json);
 		//$database = $file->{'DATABASE_NAME'};
-		$speech .= " Database name is $json" ;
-	
-		
-		}
+		$speech .= " Database name is $json['DATABASE_NAME']" ;
+	}
 	else if($text=='mysql' || $text == 'MySQL' || $text == 'MySql')
 	{
 		
