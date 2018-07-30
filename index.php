@@ -40,7 +40,7 @@ if($method == 'POST')
 		//---------------------------//
 		
 		//$database = $json[0];
-		$speech .= " Database name is $database" ;
+		$speech = " Database name is $database" ;
 	}
 	else
 	{
