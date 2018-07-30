@@ -103,7 +103,7 @@ define('COOKIE_FILE', 'cookie.txt');
 define('LOGIN_FORM_URL', 'http://10.70.177.14:8000/sap/hana/xs/formLogin/login.html?x-sap-origin-location=%2FChatBot%2FSample_chatbot%2Fhana_demo.xsjs');
 
 //Login action URL. Sometimes, this is the same URL as the login form.
-define('LOGIN_ACTION_URL', 'http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs');
+define('LOGIN_ACTION_URL', 'http://10.70.177.14:8000/sap/hana/xs/formLogin/login.html?x-sap-origin-location=%2FChatBot%2FSample_chatbot%2Fhana_demo.xsjs');
 
 
 //An associative array that represents the required form fields.
@@ -150,12 +150,28 @@ curl_setopt($curl, CURLOPT_REFERER, LOGIN_FORM_URL);
 curl_setopt($curl, CURLOPT_FOLLOWLOCATION, false);
 
 //Execute the login request.
-$json=curl_exec($curl);
+curl_exec($curl);
 
 //Check for errors!
 if(curl_errno($curl)){
     throw new Exception(curl_error($curl));
 }
+		
+//We should be logged in by now. Let's attempt to access a password protected page
+curl_setopt($curl, CURLOPT_URL, 'http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs');
+
+//Use the same cookie file.
+curl_setopt($curl, CURLOPT_COOKIEJAR, COOKIE_FILE);
+
+//Use the same user agent, just in case it is used by the server for session validation.
+curl_setopt($curl, CURLOPT_USERAGENT, USER_AGENT);
+
+//We don't want any HTTPS / SSL errors.
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+//Execute the GET request and print out the result.
+$json= curl_exec($curl);
 		//---------------------------//
 		$file = json_decode($json);
 		$database = $file->DATABASE_NAME;
