@@ -14,6 +14,15 @@ if($method == 'POST')
 	if ($text=='hana' || $text=='HANA' || $text == 'Hana')
 	{
 		$speech="SAP HANA is an in-memory, column-oriented, relational database management system";
+		
+	}
+	else if($text=='mysql' || $text == 'MySQL' || $text == 'MySql')
+	{
+		
+		$speech="MySQL is an open-source relational database management system (RDBMS).";
+	}
+	else if($text == 'database' || $text == 'Database' || $text == 'DATABASE')
+	{
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
     		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs";
@@ -32,11 +41,6 @@ if($method == 'POST')
 		
 		//$database = $json[0];
 		$speech .= " Database name is $database" ;
-	}
-	else if($text=='mysql' || $text == 'MySQL' || $text == 'MySql')
-	{
-		
-		$speech="MySQL is an open-source relational database management system (RDBMS).";
 	}
 	else
 	{
