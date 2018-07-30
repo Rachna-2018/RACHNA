@@ -57,7 +57,7 @@ if($method == 'POST')
 		));
 		$json = curl_exec($ch);*/
 //method4
-		/*$username='SANYAM_K';
+		$username='SANYAM_K';
 		$password='Welcome@123';
 		$URL='http://74.201.240.43:8000/ChatBot/Sample_chatbot/hana_demo.xsjs';
 		$ch = curl_init();
@@ -70,7 +70,7 @@ if($method == 'POST')
 		$json=curl_exec ($ch);
 		//print "curl response is:" . $json;
 		//$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
-		curl_close ($ch);*/
+		curl_close ($ch);
 //method5
 		/*$username = "SANYAM_K";
 		$password = "Welcome@123";
@@ -88,7 +88,7 @@ if($method == 'POST')
 
 //method6
 		//The username or email address of the account.
-define('USERNAME', 'SANYAM_K');
+/*define('USERNAME', 'SANYAM_K');
 
 //The password of the account.
 define('PASSWORD', 'Welcome@123');
@@ -172,7 +172,7 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 //Execute the GET request and print out the result.
-$json= curl_exec($curl);
+$json= curl_exec($curl);*/
 		//---------------------------//
 		$file = json_decode($json);
 		$database = $file->DATABASE_NAME;
