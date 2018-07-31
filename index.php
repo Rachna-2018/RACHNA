@@ -111,7 +111,7 @@ if($method == 'POST')
 	{
 		$room = $json->queryResult->parameters->rooms;
 		$year = $json->queryResult->parameters->year;
-		$loc = $json->queryResult->parameters->locality;
+		$loc = $json->queryResult->parameters->location;
 		$com = "getcount";
 		
 		$username    = "SANYAM_K";
