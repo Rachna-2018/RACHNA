@@ -42,12 +42,19 @@ if($method == 'POST')
 		$database=  $someArray[0]["DATABASE_NAME"];
 		$speech = " Database name is $database" ;
 	}
-	else if ($text == 'BEDROOMS')
+	
+	else
 	{
+		$speech = "Input something else";
+	}
+		
 		$com = $json->queryResult->parameters->command;
 		$com = strtoupper($com);
 		$room = $json->queryResult->parameters->rooms;
 		$room = strtoupper($room);
+	if ($com == 'LOCALITY')
+	{
+		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
     		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=$com&getRooms=$room";
@@ -63,10 +70,6 @@ if($method == 'POST')
 		$someArray = json_decode($json, true);
 		//$database=  $someArray[0]["DATABASE_NAME"];
 		$speech = " Database name is $someArray" ;
-	}
-	else
-	{
-		$speech = "Input something else";
 	}
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
