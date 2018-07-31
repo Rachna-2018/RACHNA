@@ -73,7 +73,8 @@ if($method == 'POST')
 		foreach ($someobj["results"] as $value) 
 		{
 			$speech .= $value["METRO3"];
-			echo "<br>";
+			$speech .= "\r\n";
+			
 			
        		 }	
 	}
