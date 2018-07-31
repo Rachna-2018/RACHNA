@@ -69,14 +69,11 @@ if($method == 'POST')
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
 		$someobj = json_decode($json,true);
-		foreach($someobj as $value) {
- 		$speech= $value;
-		}
-		
-		//$database=  $someobj->results[0]->METRO3;
-		//$speech = "$room bedroom houses are available in metro areas $database" ;
-		
-		
+		$speech = "$room bedroom houses are available in metro areas " ;
+		foreach ($data["results"] as $value) 
+		{
+			$speech .= $value["METRO3"];
+       		 }	
 	}
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
