@@ -107,6 +107,35 @@ if($method == 'POST')
 			
        		 }	
 	}
+	else if ($com == 'houses')
+	{
+		$room = $json->queryResult->parameters->rooms;
+		$year = $json->queryResult->parameters->year;
+		$loc = $json->queryResult->parameters->locality;
+		$com = "getcount";
+		
+		$username    = "SANYAM_K";
+    		$password    = "Welcome@123";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=getcount&getRooms=$room&getBuilt=$year&getLoc=$loc";
+		$ch      = curl_init( $json_url );
+    		$options = array(
+        	CURLOPT_SSL_VERIFYPEER => false,
+        	CURLOPT_RETURNTRANSFER => true,
+        	CURLOPT_USERPWD        => "{$username}:{$password}",
+        	CURLOPT_HTTPHEADER     => array( "Accept: application/json" ),
+    		);
+    		curl_setopt_array( $ch, $options );
+		$json = curl_exec( $ch );
+		$someobj = json_decode($json,true);
+		//$speech = "houses are available in metro areas $json" ;
+		foreach ($someobj["results"] as $value) 
+		{
+			$speech .= $value["AVAILCOUNT"]. " houses are available in ".$loc." metro area";
+			$speech .= "\r\n";
+			
+			
+       		 }
+	}
 	
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
