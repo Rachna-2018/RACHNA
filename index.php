@@ -116,7 +116,7 @@ if($method == 'POST')
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=getcount&getRooms=$room&getBuilt=$year&getLoc=$loc";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=$com&getRooms=$room&getBuilt=$year&getLoc=$loc";
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
@@ -130,8 +130,8 @@ if($method == 'POST')
 		//$speech = "houses are available in metro areas $json" ;
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech .= $value["AVAILCOUNT"]. " houses are available in ".$loc." metro area";
-			$speech .= "\r\n";
+			$speech = $value["AVAILCOUNT"]. " houses are available in ". $loc. " metro area location";
+			
 			
 			
        		 }
