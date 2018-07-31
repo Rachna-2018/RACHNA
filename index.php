@@ -37,9 +37,24 @@ if($method == 'POST')
 		$json = curl_exec( $ch );
 		$someArray = json_decode($json, true);
 		$database=  $someArray[0]["DATABASE_NAME"];
-		//---------------------------//
-		
-		//$database = $json[0];
+		$speech = " Database name is $database" ;
+	}
+	else if ($text == 'Bedrooms' || $text == 'locality')
+	{
+		$username    = "SANYAM_K";
+    		$password    = "Welcome@123";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=locality&getRooms=3";
+		$ch      = curl_init( $json_url );
+    		$options = array(
+        	CURLOPT_SSL_VERIFYPEER => false,
+        	CURLOPT_RETURNTRANSFER => true,
+        	CURLOPT_USERPWD        => "{$username}:{$password}",
+        	CURLOPT_HTTPHEADER     => array( "Accept: application/json" ),
+    		);
+    		curl_setopt_array( $ch, $options );
+		$json = curl_exec( $ch );
+		$someArray = json_decode($json, true);
+		$database=  $someArray[0]["DATABASE_NAME"];
 		$speech = " Database name is $database" ;
 	}
 	else
