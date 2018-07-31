@@ -43,10 +43,10 @@ if($method == 'POST')
 		$speech = " Database name is $database" ;
 	}
 	
-	else
+	/*else
 	{
 		$speech = "Input something else";
-	}
+	}*/
 		
 		$com = $json->queryResult->parameters->command;
 		$com = strtolower($com);
