@@ -87,7 +87,7 @@ if($method == 'POST')
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-    		$json_url    = "http://10.70.177.14:8000/ChatBot/chatbot/HADS_2013.xsjs?cmd=$com&totSalLow=$lowsal&totSalHigh=$highsal";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=$com&totSalLow=$lowsal&totSalHigh=$highsal";
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
@@ -97,15 +97,15 @@ if($method == 'POST')
     		);
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
-		//$someobj = json_decode($json,true);
-		$speech = "houses are available in metro areas $json" ;
-		/*foreach ($someobj["results"] as $value) 
+		$someobj = json_decode($json,true);
+		//$speech = "houses are available in metro areas $json" ;
+		foreach ($someobj["results"] as $value) 
 		{
 			$speech .= $value["HOUSE_COUNT"]. " houses available in ".$value["METRO3"]." area";
 			$speech .= "\r\n";
 			
 			
-       		 }*/	
+       		 }	
 	}
 	
 	$response = new \stdClass();
