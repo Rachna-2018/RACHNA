@@ -51,6 +51,8 @@ if($method == 'POST')
 		$com = $json->queryResult->parameters->command;
 		$com = strtolower($com);
 		$room = $json->queryResult->parameters->rooms;
+		$lowsal = $json->queryResult->parameters->lowsal;
+		$highsal = $json->queryResult->parameters->highsal;
 		
 	
 	if ($com == 'locality')
@@ -78,6 +80,32 @@ if($method == 'POST')
 			
        		 }	
 	}
+	if ($com == 'salary' || $com == 'income')
+	{
+		$com = 'gethousesal';
+		$username    = "SANYAM_K";
+    		$password    = "Welcome@123";
+    		$json_url    = "http://10.70.177.14:8000/ChatBot/chatbot/HADS_2013.xsjs?cmd=$com&totSalLow=$lowsal&totSalHigh=$highsal";
+		$ch      = curl_init( $json_url );
+    		$options = array(
+        	CURLOPT_SSL_VERIFYPEER => false,
+        	CURLOPT_RETURNTRANSFER => true,
+        	CURLOPT_USERPWD        => "{$username}:{$password}",
+        	CURLOPT_HTTPHEADER     => array( "Accept: application/json" ),
+    		);
+    		curl_setopt_array( $ch, $options );
+		$json = curl_exec( $ch );
+		$someobj = json_decode($json,true);
+		
+		foreach ($someobj["results"] as $value) 
+		{
+			$speech .= $value["HOUSE_COUNT"]. " houses available in ".$value["METRO3"]." area";
+			$speech .= "\r\n";
+			
+			
+       		 }	
+	}
+	
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
     	$response->source = "webhook";
