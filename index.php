@@ -69,10 +69,10 @@ if($method == 'POST')
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
 		$someobj = json_decode($json,true);
-		foreach($someobj as $key => $value) 
-		{
-		$speech= 'Your key is: '.$key.' and the value of the key is:'.$value;
+		foreach($someobj as $value) {
+ 		$speech= $value;
 		}
+		
 		//$database=  $someobj->results[0]->METRO3;
 		//$speech = "$room bedroom houses are available in metro areas $database" ;
 		
