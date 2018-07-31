@@ -69,8 +69,8 @@ if($method == 'POST')
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
 		$someArray = json_decode($json, true);
-		//$database=  $someArray[0]["DATABASE_NAME"];
-		$speech = " Database name is $json" ;
+		$response=  $someArray[0]["results"];
+		$speech = "$room bedroom houses are available in metro areas $response" ;
 	}
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
