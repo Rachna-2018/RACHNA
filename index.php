@@ -68,8 +68,9 @@ if($method == 'POST')
     		);
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
-		$someArray = json_decode($json, true);
-		$database=  $someArray[0]["results"]["METRO3"];
+		$someobj = json_decode($json);
+		
+		$database=  $someobj->results[index]->METRO3;
 		$speech = "$room bedroom houses are available in metro areas $database" ;
 		
 		
