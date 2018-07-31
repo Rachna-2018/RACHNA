@@ -79,7 +79,7 @@ if($method == 'POST')
 			
        		 }	
 	}
-	if ($com == 'salary' || $com == 'income')
+	else if ($com == 'salary' || $com == 'income')
 	{
 		$lowsal = $json->queryResult->parameters->lowsal;
 		$highsal = $json->queryResult->parameters->highsal;
