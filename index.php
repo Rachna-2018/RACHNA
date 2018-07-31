@@ -73,7 +73,7 @@ if($method == 'POST')
 		$speech = "$room bedroom houses are available in metro areas " ;
 		
 		foreach ($someArray as $key => $value) {
-    		$speech .= $value["METRO3"] . "<br>";
+    		$speech .= $key["results"]$value["METRO3"] . "<br>";
   		}
 	}
 	$response = new \stdClass();
