@@ -50,14 +50,13 @@ if($method == 'POST')
 		
 		$com = $json->queryResult->parameters->command;
 		$com = strtolower($com);
-		$room = $json->queryResult->parameters->rooms;
-		$lowsal = $json->queryResult->parameters->lowsal;
-		$highsal = $json->queryResult->parameters->highsal;
+		
+		
 		
 	
 	if ($com == 'locality')
 	{
-		
+		$room = $json->queryResult->parameters->rooms;
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
     		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=$com&getRooms=$room";
@@ -82,7 +81,10 @@ if($method == 'POST')
 	}
 	if ($com == 'salary' || $com == 'income')
 	{
+		$lowsal = $json->queryResult->parameters->lowsal;
+		$highsal = $json->queryResult->parameters->highsal;
 		$com = 'gethousesal';
+		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
     		$json_url    = "http://10.70.177.14:8000/ChatBot/chatbot/HADS_2013.xsjs?cmd=$com&totSalLow=$lowsal&totSalHigh=$highsal";
@@ -96,7 +98,7 @@ if($method == 'POST')
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
 		//$someobj = json_decode($json,true);
-		$speech = "houses are available in metro areas \n $json" ;
+		$speech = "houses are available in metro areas $json" ;
 		/*foreach ($someobj["results"] as $value) 
 		{
 			$speech .= $value["HOUSE_COUNT"]. " houses available in ".$value["METRO3"]." area";
