@@ -95,15 +95,15 @@ if($method == 'POST')
     		);
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
-		$someobj = json_decode($json,true);
-		
-		foreach ($someobj["results"] as $value) 
+		//$someobj = json_decode($json,true);
+		$speech = "houses are available in metro areas \n $json" ;
+		/*foreach ($someobj["results"] as $value) 
 		{
 			$speech .= $value["HOUSE_COUNT"]. " houses available in ".$value["METRO3"]." area";
 			$speech .= "\r\n";
 			
 			
-       		 }	
+       		 }*/	
 	}
 	
 	$response = new \stdClass();
