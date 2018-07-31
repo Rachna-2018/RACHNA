@@ -70,7 +70,7 @@ if($method == 'POST')
 		$json = curl_exec( $ch );
 		$someArray = json_decode($json, true);
 		//$database=  $someArray[0]["DATABASE_NAME"];
-		$speech = " Database name is $someArray" ;
+		$speech = " Database name is $json" ;
 	}
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
