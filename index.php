@@ -49,10 +49,11 @@ if($method == 'POST')
 	}
 		
 		$com = $json->queryResult->parameters->command;
-		$com = strtoupper($com);
+		$com = strtolower($com);
 		$room = $json->queryResult->parameters->rooms;
-		$room = strtoupper($room);
-	if ($com == 'LOCALITY')
+		
+	
+	if ($com == 'locality')
 	{
 		
 		$username    = "SANYAM_K";
