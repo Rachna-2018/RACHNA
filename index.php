@@ -70,7 +70,7 @@ if($method == 'POST')
 		$json = curl_exec( $ch );
 		$someobj = json_decode($json,true);
 		$speech = "$room bedroom houses are available in metro areas " ;
-		foreach ($data["results"] as $value) 
+		foreach ($someobj["results"] as $value) 
 		{
 			$speech .= $value["METRO3"];
        		 }	
