@@ -72,7 +72,8 @@ if($method == 'POST')
 		$speech = "$room bedroom houses are available in metro areas " ;
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech .= $value["METRO3"] ."\n";
+			$speech .= $value["METRO3"];
+			echo "<br>";
 			
        		 }	
 	}
