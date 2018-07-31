@@ -69,8 +69,12 @@ if($method == 'POST')
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
 		$someArray = json_decode($json, true);
-		$response=  $someArray[0]["results"];
-		$speech = "$room bedroom houses are available in metro areas $response" ;
+		//$response=  $someArray[0]["results"];
+		$speech = "$room bedroom houses are available in metro areas " ;
+		
+		foreach ($someArray as $key => $value) {
+    		$speech .= $value["METRO3"] . "<br>";
+  		}
 	}
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
