@@ -156,13 +156,13 @@ if($method == 'POST')
 		$json = curl_exec( $ch );
 		$someobj = json_decode($json,true);
 		//$speech = "houses are available in metro areas $json" ;
-		
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech = $value["LOADED"]."  ".$value["TABLE_NAME"];
+			$speech .= $value["LOADED"]. " houses available in ".$value["TABLE_NAME"]." area";
 			$speech .= "\r\n";
 			
-		}
+			
+       		 }	
 	}	
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
