@@ -141,10 +141,10 @@ if($method == 'POST')
 	{
 		
 		$com = "tablestatus";
-		
+		$schema = $json->queryResult->parameters->schema;
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-    		$json_url    = "http://74.201.240.43:8000/ChatBot/chatbot/HADS_2013.xsjs?cmd=$com";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/chatbot/HADS_2013.xsjs?cmd=$com&getSchema=$schema";
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
