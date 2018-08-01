@@ -156,13 +156,11 @@ if($method == 'POST')
 		$json = curl_exec( $ch );
 		$someobj = json_decode($json,true);
 		//$speech = "houses are available in metro areas $json" ;
+		
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech = " TABLE LOAD STATUS "."\t".$value["LOADED"]."\n";
-			$speech .= " TABLE_NAME "."\t".$value["TABLE_NAME"]."\n";
-			$speech .= " RECORD_COUNT "."\t".$value["RECORD_COUNT"]."\n";
-			$speech .= " MEMORY_SIZE_IN_MAIN "."\t".$value["MEMORY_SIZE_IN_MAIN"]."\n";
-			$speech .= " MEMORY_SIZE_IN_DELTA "."\t".$value["MEMORY_SIZE_IN_DELTA"]."\n";
+			$speech = $value["LOADED"]."  ".$value["TABLE_NAME"]."  ".$value["RECORD_COUNT"]."  ".$value["MEMORY_SIZE_IN_MAIN"]."  ".$value["MEMORY_SIZE_IN_DELTA"];
+			$speech .= "\r\n";
 			
 		}
 	}	
