@@ -159,7 +159,7 @@ if($method == 'POST')
 		
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech = $value["LOADED"]."  ".$value["TABLE_NAME"]."  ".$value["RECORD_COUNT"]."  ".$value["MEMORY_SIZE_IN_MAIN"]."  ".$value["MEMORY_SIZE_IN_DELTA"];
+			$speech = $value["LOADED"]."  ".$value["TABLE_NAME"];
 			$speech .= "\r\n";
 			
 		}
