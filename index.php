@@ -158,7 +158,7 @@ if($method == 'POST')
 		//$speech = "houses are available in metro areas $json" ;
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech .= $value["LOADED"]. " houses available in ".$value["TABLE_NAME"]." area";
+			$speech .= $value["LOADED"]. "  ".$value["TABLE_NAME"]."  ".$value["RECORD_COUNT"]. "  ".$value["MEMORY_SIZE_IN_MAIN"];
 			$speech .= "\r\n";
 			
 			
