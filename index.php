@@ -137,7 +137,35 @@ if($method == 'POST')
 			
        		 }
 	}
-	
+	else if($com == 'hanastatus')
+	{
+		
+		$com = "tablestatus";
+		
+		$username    = "SANYAM_K";
+    		$password    = "Welcome@123";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/chatbot/HADS_2013.xsjs?cmd=$com";
+		$ch      = curl_init( $json_url );
+    		$options = array(
+        	CURLOPT_SSL_VERIFYPEER => false,
+        	CURLOPT_RETURNTRANSFER => true,
+        	CURLOPT_USERPWD        => "{$username}:{$password}",
+        	CURLOPT_HTTPHEADER     => array( "Accept: application/json" ),
+    		);
+    		curl_setopt_array( $ch, $options );
+		$json = curl_exec( $ch );
+		$someobj = json_decode($json,true);
+		//$speech = "houses are available in metro areas $json" ;
+		foreach ($someobj["results"] as $value) 
+		{
+			$speech = " TABLE LOAD STATUS ".$value["LOADED"]."\n";
+			$speech .= " TABLE_NAME ". $value["TABLE_NAME"]."\n";
+			$speech .= " RECORD_COUNT ".$value["RECORD_COUNT"]."\n";
+			$speech .= " MEMORY_SIZE_IN_TOTAL ".$value["MEMORY_SIZE_IN_TOTAL"]."\n";
+			$speech .= " MEMORY_SIZE_IN_MAIN ".$value["MEMORY_SIZE_IN_MAIN"]."\n";
+			$speech .= " MEMORY_SIZE_IN_DELTA ".$value["MEMORY_SIZE_IN_DELTA"]."\n";
+		}
+	}	
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
     	$response->source = "webhook";
