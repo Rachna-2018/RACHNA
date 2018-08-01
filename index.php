@@ -155,7 +155,7 @@ if($method == 'POST')
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
 		$someobj = json_decode($json,true);
-		$speech = "STATUS   TABLE NAME   TOTAL_RECORDS   MEMORY_SIZE_MAIN   MEMORY_SIZE_DELTA" ;
+		$speech = "STATUS   TABLE NAME   TOTAL_RECORDS   MEMORY_SIZE_MAIN   MEMORY_SIZE_DELTA\n\n" ;
 		foreach ($someobj["results"] as $value) 
 		{
 			$speech .= $value["LOADED"]. "  ".$value["TABLE_NAME"]."  ".$value["RECORD_COUNT"]. "  ".$value["MEMORY_SIZE_IN_MAIN"]. "  ".$value["MEMORY_SIZE_IN_DELTA"];
