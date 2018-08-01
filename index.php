@@ -158,12 +158,13 @@ if($method == 'POST')
 		//$speech = "houses are available in metro areas $json" ;
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech = " TABLE LOAD STATUS "."\t".$value["LOADED"]."\n";
-			$speech .= " TABLE_NAME "."\t".$value["TABLE_NAME"]."\n";
-			$speech .= " RECORD_COUNT "."\t".$value["RECORD_COUNT"]."\n";
-			$speech .= " MEMORY_SIZE_IN_TOTAL "."\t".$value["MEMORY_SIZE_IN_TOTAL"]."\n";
-			$speech .= " MEMORY_SIZE_IN_MAIN "."\t".$value["MEMORY_SIZE_IN_MAIN"]."\n";
-			$speech .= " MEMORY_SIZE_IN_DELTA "."\t".$value["MEMORY_SIZE_IN_DELTA"]."\n";
+			$speech = " TABLE LOAD STATUS "."\t".$value["LOADED"];
+			$speech .= " TABLE_NAME "."\t".$value["TABLE_NAME"];
+			$speech .= " RECORD_COUNT "."\t".$value["RECORD_COUNT"];
+			$speech .= " MEMORY_SIZE_IN_TOTAL "."\t".$value["MEMORY_SIZE_IN_TOTAL"];
+			$speech .= " MEMORY_SIZE_IN_MAIN "."\t".$value["MEMORY_SIZE_IN_MAIN"];
+			$speech .= " MEMORY_SIZE_IN_DELTA "."\t".$value["MEMORY_SIZE_IN_DELTA"];
+			$speech .= "\r\n";
 		}
 	}	
 	$response = new \stdClass();
