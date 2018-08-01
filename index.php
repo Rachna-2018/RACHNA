@@ -137,7 +137,7 @@ if($method == 'POST')
 			
        		 }
 	}
-	else if($com == 'hanastatus')
+	else if($com == 'status')
 	{
 		
 		$com = "tablestatus";
