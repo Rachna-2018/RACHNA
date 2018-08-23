@@ -214,7 +214,7 @@ if($method == 'POST')
     		$password    = "Welcome@123";
     		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/deal_info.xsjs?COMMAND=$com&EMAIL=$Emailid&CUST_NAME=$name&AREA_NUM='$area_num'&ROOMS='$rooms'&BUILT_YEAR='$builtyear'&APP_DATE=$app_date&APP_TIME=$app_time";
 		$app_date = date_create($app_date);
-		
+		$app_time = date_create($app_time);
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
@@ -230,7 +230,7 @@ if($method == 'POST')
 		{
 			//$speech .= $value["DEAL_NO"]. "  ".$value["EMAIL"]."  ".$value["CUST_NAME"]. "  ".$value["AREA_NUM"]. "  ".$value["ROOMS"]. "  ".$value["BUILT_YEAR"];
 			//$speech .= "\r\n";
-			$speech = $value["CUST_NAME"].", Your appointment has booked with booking id ".$value["DEAL_NO"]." on ".date_format($app_date,"m-d-y")." at ".$value["APP_TIME"];
+			$speech = $value["CUST_NAME"].", Your appointment has booked with booking id ".$value["DEAL_NO"]." on ".date_format($app_date,'l jS \of F Y')." at ".date_format($app_time,'h:i:s A');
 				$speech .= "\r\n Other details will be sent on Email\r\n";
 			
 			
