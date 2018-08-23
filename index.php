@@ -228,7 +228,7 @@ if($method == 'POST')
 		{
 			//$speech .= $value["DEAL_NO"]. "  ".$value["EMAIL"]."  ".$value["CUST_NAME"]. "  ".$value["AREA_NUM"]. "  ".$value["ROOMS"]. "  ".$value["BUILT_YEAR"];
 			//$speech .= "\r\n";
-			$speech = $value["CUST_NAME"].", Your appointment has booked with booking id ".$value["DEAL_NO"]." on $app_date at $app_time";
+			$speech = $value["CUST_NAME"].", Your appointment has booked with booking id ".$value["DEAL_NO"]." on ".$value["APP_DATE"]." at ".$value["APP_TIME"];
 				$speech .= "\r\n Other details will be sent on Email\r\n";
 			
 			
