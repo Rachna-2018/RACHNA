@@ -206,10 +206,13 @@ if($method == 'POST')
 		$builtyear = $json->queryResult->parameters->BUILT_YEAR;
 		$name = $json->queryResult->parameters->name;
 		$area_num = $json->queryResult->parameters->AREA_NUM;
+		$app_date = $json->queryResult->parameters->app_date;
+		$app_time = $json->queryResult->parameters->app_time;
+		
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/deal_info.xsjs?COMMAND=$com&EMAIL=$Emailid&CUST_NAME=$name&AREA_NUM='$area_num'&ROOMS='$rooms'&BUILT_YEAR='$builtyear'";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/deal_info.xsjs?COMMAND=$com&EMAIL=$Emailid&CUST_NAME=$name&AREA_NUM='$area_num'&ROOMS='$rooms'&BUILT_YEAR='$builtyear'&APP_DATE=$app_date&APP_TIME=$app_time";
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
@@ -225,7 +228,7 @@ if($method == 'POST')
 		{
 			//$speech .= $value["DEAL_NO"]. "  ".$value["EMAIL"]."  ".$value["CUST_NAME"]. "  ".$value["AREA_NUM"]. "  ".$value["ROOMS"]. "  ".$value["BUILT_YEAR"];
 			//$speech .= "\r\n";
-			$speech = $value["CUST_NAME"].", Your house has booked with booking id ".$value["DEAL_NO"].
+			$speech = $value["CUST_NAME"].", Your appointment has booked with booking id ".$value["DEAL_NO"]." on $app_date at $app_time";
 				$speech .= "\r\n Other details will be sent on Email\r\n";
 			
 			
