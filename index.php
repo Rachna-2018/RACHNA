@@ -257,7 +257,7 @@ if($method == 'POST')
 			$speech .= "\r\n";
 			
 			
-       		 }
+       		
 	
 	}
 	$response = new \stdClass();
