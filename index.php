@@ -236,6 +236,30 @@ if($method == 'POST')
 			
        		}	
 	}
+	else if ($com == 'chkfamily')
+	{
+		$Family_num= $json->queryResult->parameters->Familynumber;
+		
+		$ROOMS= $json->queryResult->parameters->ROOMS;
+		
+		if ($Family_num >= 10)
+		{ $rm = 8;}
+		else if($Family_num >= 8)
+		{ $rm = 7;}
+		else if($Family_num >= 6)
+		{ $rm = 5;}
+		else if($Family_num >=4)
+		{$rm = 4;}
+		else {$rm = 3;}
+		$json->queryResult->parameters->ROOMS = $rm;
+		
+			$speech = "I would suggest $rm BHK house for you.";
+			$speech .= "\r\n";
+			
+			
+       		 }
+	
+	}
 	$response = new \stdClass();
     	$response->fulfillmentText = $speech;
     	$response->source = "webhook";
