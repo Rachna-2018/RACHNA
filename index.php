@@ -252,8 +252,9 @@ if($method == 'POST')
 		{$rm = 4;}
 		else {$rm = 3;}
 		$json->queryResult->parameters->ROOMS = $rm;
+		$VRoom = $rm;
 		
-			$speech = "I would suggest $rm BHK house for you.";
+			$speech = "I would suggest $VRoom BHK house for you.";
 			$speech .= "\r\n";
 			
 			
