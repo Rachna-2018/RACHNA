@@ -19,12 +19,12 @@ if($method == 'POST')
 		$ENT_OP= $json->queryResult->parameters->ENT_OP;
 		$ENT_OP= strtoupper($ENT_OP);
 		$ROOMS= $json->queryResult->parameters->ROOMS;
-		$ROOMS = strtoupper($ROOMS);
+		//$ROOMS = strtoupper($ROOMS);
 		if($ENT_ROOM == "") {$ENT_ROOM = 'BEDROOM';}
 		if($ENT_LOC == "") {$ENT_LOC = 'LOCATION';}
 		if($ENT_OP == "") {$ENT_OP = '0';}
-		$userespnose = array("PLEASE IGNORE", "IGNORE","IGNORE IT", "ANY VALUE", "ANY" , "NO IDEA");
-		if (in_array($ROOMS, $userespnose)) {$ROOMS = 0;}
+		//$userespnose = array("PLEASE IGNORE", "IGNORE","IGNORE IT", "ANY VALUE", "ANY" , "NO IDEA");
+		//if (in_array($ROOMS, $userespnose)) {$ROOMS = 0;}
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
