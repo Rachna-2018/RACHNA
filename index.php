@@ -42,7 +42,7 @@ if($method == 'POST')
 		$json = curl_exec( $ch );
 		$someobj = json_decode($json,true);
 		if($ROOMS == 0) {$room_text = "Houses ";}else {$room_text = "$ROOMS bedroom houses ";}
-		$speech = $room_text."are available in metro areas \n" ;
+		$speech = $room_text."are available in following metro areas : \n" ;
 		foreach ($someobj["results"] as $value) 
 		{
 			$speech .= $value["LOCATIONS"];
