@@ -50,7 +50,7 @@ if($method == 'POST')
 			
 			
        		 }
-	//	$speech .="\r\n\n Which metro area will you prefer to get more info\n";
+			$speech .="\r\n\n Which metro area will you prefer to get more info\n";
 	}
 	else if ($com == 'gethousesal')
 	{
@@ -96,7 +96,7 @@ if($method == 'POST')
 			
 			
        		 }
-		//$speech .="\r\n\n Which area will you prefer to get more info\n";
+		$speech .="\r\n\n Which area will you prefer to get more info\n";
 	}
 	else if ($com == 'getcount')
 	{
