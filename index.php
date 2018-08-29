@@ -282,11 +282,12 @@ if($method == 'POST')
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
 		$someobj = json_decode($json,true);
-		$speech = 'Thanks for sharing the information\r\n';
+		$speech = 'Thanks for sharing the information'
+		$speech .= "\r\n";
 		$speech .= 'So you must be looking for a house near good ';
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech .= $value["SCHOOL_TYPE"]."\r\n";
+			$speech .= $value["SCHOOL_TYPE"][0]."\r\n";
 				
 		}
 		
