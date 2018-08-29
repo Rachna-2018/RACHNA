@@ -265,10 +265,11 @@ if($method == 'POST')
 	{
 		$AGE1 = $json->queryResult->parameters->AGE1;
 		$AGE2 = $json->queryResult->parameters->AGE2;
+		$AGE3 = $json->queryResult->parameters->AGE3;
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/deal_info.xsjs?COMMAND=$com&EMAIL=$Emailid&CUST_NAME=$name&AREA_NUM='$area_num'&ROOMS='$rooms'&BUILT_YEAR='$builtyear'&APP_DATE=$app_date&APP_TIME=$app_time";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs?ENT_OP='0'&ENT_LOC='0'&ENT_ROOM='0'&ENT_BUILT='0'&ENT_SAL='0'&COMMAND=getschool&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0&AGE1=$AGE1&AGE2=$AGE2&AGE3=$AGE3";
 		$app_date = date_create($app_date);
 		$app_time = date_create($app_time);
 		$ch      = curl_init( $json_url );
@@ -281,16 +282,12 @@ if($method == 'POST')
     		curl_setopt_array( $ch, $options );
 		$json = curl_exec( $ch );
 		$someobj = json_decode($json,true);
-		
+		$speech = 'Thanks for sharing the information\r\n';
 		foreach ($someobj["results"] as $value) 
 		{
-			//$speech .= $value["DEAL_NO"]. "  ".$value["EMAIL"]."  ".$value["CUST_NAME"]. "  ".$value["AREA_NUM"]. "  ".$value["ROOMS"]. "  ".$value["BUILT_YEAR"];
-			//$speech .= "\r\n";
-			$speech = $value["CUST_NAME"].", Your appointment has booked with booking id ".$value["DEAL_NO"]." on ".date_format($app_date,'l jS \of F Y')." at ".date_format($app_time,'h:i:s A');
-				$speech .= "\r\n Other details will be sent on Email\r\n";
-			
-			
-       		}
+			$speech .= 'So you must be looking for a house near good $value["SCHOOL_TYPE"]';
+				
+		}
 		
 	}
 	
