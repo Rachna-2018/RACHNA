@@ -285,17 +285,17 @@ if($method == 'POST')
 		$speech .= "\r\n";
 		$speech .= "\n So you must be looking for a house near good ";
 		$speech .= "\r\n";
-		$json->queryResult->parameters->Stype1 = $someobj["results"][0];
+		/*$json->queryResult->parameters->Stype1 = $someobj["results"][0];
 		$json->queryResult->parameters->Stype2 = $someobj["results"][1];
 		$json->queryResult->parameters->Stype3 = $someobj["results"][2];
 		
 		$s1 = $someobj["results"][0];
 		$s2 = $someobj["results"][1];
-		$s3 = $someobj["results"][2];
+		$s3 = $someobj["results"][2];*/
 		
-		echo $s1;
+		/*echo $s1;
 		echo $s2;
-		echo $s3;
+		echo $s3;*/
 		foreach ($someobj["results"] as $value) 
 		{
 			$speech .= $value["SCHOOL_TYPE"]." SCHOOL ";
