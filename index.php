@@ -285,6 +285,7 @@ if($method == 'POST')
 		$speech = "Thanks for sharing the information";
 		$speech .= "\r\n";
 		$speech .= "\n So you must be looking for a house near good ";
+		$speech .= "\r\n";
 		foreach ($someobj["results"] as $value) 
 		{
 			$speech .= $value["SCHOOL_TYPE"]." SCHOOL ";
