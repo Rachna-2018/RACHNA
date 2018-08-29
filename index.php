@@ -303,7 +303,7 @@ if($method == 'POST')
 		
 		$username    = "SANYAM_K";
     		$password    = "Welcome@123";
-    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs?ENT_OP='0'&ENT_LOC='0'&ENT_ROOM='0'&ENT_BUILT='0'&ENT_SAL='0'&COMMAND=getschool&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0&AGE1=$AGE1&AGE2=$AGE2&AGE3=$AGE3&RATING=$rating";
+    		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs?ENT_OP='0'&ENT_LOC='0'&ENT_ROOM='0'&ENT_BUILT='0'&ENT_SAL='0'&COMMAND=getschoolloc&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0&AGE1=$AGE1&AGE2=$AGE2&AGE3=$AGE3&RATING=$rating";
 		
 		$ch      = curl_init( $json_url );
     		$options = array(
