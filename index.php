@@ -284,13 +284,13 @@ if($method == 'POST')
 		$someobj = json_decode($json,true);
 		$speech = "Thanks for sharing the information";
 		$speech .= "\r\n";
-		$speech .= "So you must be looking for a house near good ";
+		$speech .= "\n So you must be looking for a house near good ";
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech .= $value["SCHOOL_TYPE"]." School ";
-				
+			$speech .= $value["SCHOOL_TYPE"]." SCHOOL ";
+				$speech .= "\r\n";
 		}
-		$speech .= "\r\n";
+		
 		
 	}
 	
