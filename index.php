@@ -287,7 +287,7 @@ if($method == 'POST')
 		$speech .= 'So you must be looking for a house near good ';
 		foreach ($someobj["results"] as $value) 
 		{
-			$speech .= $value["SCHOOL_TYPE"].' School ';
+			$speech .= $value["SCHOOL_TYPE"]." School ";
 				
 		}
 		$speech .= "\r\n";
