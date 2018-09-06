@@ -339,7 +339,7 @@ if($method == 'POST')
 				$speech .= "\r\n";
 		}
 		
-		
+		$speech .= "Tell me your choice.";
 	}
 	
 	$response = new \stdClass();
