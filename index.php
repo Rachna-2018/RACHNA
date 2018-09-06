@@ -198,6 +198,10 @@ if($method == 'POST')
 			
 			
        		 }
+		$speech .= "\r\n";
+		$speech .= " If you want, you can change the criteria according to salary range, built year, location or number of bedrooom";
+		$speech .= "\r\n";
+		$speech .= "or tell me if you want to see the house";
 	}
 	else if($com == 'closedeal')
 	{
@@ -230,7 +234,7 @@ if($method == 'POST')
 		{
 			//$speech .= $value["DEAL_NO"]. "  ".$value["EMAIL"]."  ".$value["CUST_NAME"]. "  ".$value["AREA_NUM"]. "  ".$value["ROOMS"]. "  ".$value["BUILT_YEAR"];
 			//$speech .= "\r\n";
-			$speech = $value["CUST_NAME"].", Your appointment has booked with booking id ".$value["DEAL_NO"]." on ".date_format($app_date,'l jS \of F Y')." at ".date_format($app_time,'h:i:s A');
+			$speech = "Dear ".$value["CUST_NAME"].", Your appointment has booked with booking id ".$value["DEAL_NO"]." on ".date_format($app_date,'l jS \of F Y')." at ".date_format($app_time,'h:i:s A');
 				$speech .= "\r\n Other details will be sent on Email\r\n";
 			
 			
