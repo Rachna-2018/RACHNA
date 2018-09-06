@@ -199,7 +199,7 @@ if($method == 'POST')
 			
        		 }
 		$speech .= "\r\n";
-		$speech .= " If you want, you can change the criteria according to salary range, built year, location or number of bedrooom";
+		$speech .= " you can change the criteria to see more options";
 		$speech .= "\r\n";
 		$speech .= "or tell me if you want to see the house";
 	}
