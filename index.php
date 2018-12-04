@@ -74,7 +74,7 @@ if($method == 'POST')
 		if (in_array($LOWSAL, $userespnose) or in_array($HIGHSAL, $userespnose)) {$LOWSAL = 0; $HIGHSAL = 0;}
 		
 		$username    = "SANYAM_K";
-    		$password    = "Welcome@123";
+    		$password    = "Welcome@234";
 		//$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=HOW%20MANY&ENT_LOC=LOCATION&ENT_ROOM=0&ENT_BUILT=0&ENT_SAL=EARN&COMMAND=gethousesal&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=15000&HIGHSAL=20015";
     		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs?ENT_OP='$ENT_OP'&ENT_LOC='$ENT_LOC'&ENT_ROOM='0'&ENT_BUILT='0'&ENT_SAL='$ENT_SAL'&COMMAND=$com&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=$LOWSAL&HIGHSAL=$HIGHSAL";
 		
@@ -138,7 +138,7 @@ if($method == 'POST')
 		if($LOWSAL == "" or $HIGHSAL == "") {$LOWSAL = 0; $HIGHSAL = 0;}
 			
 		$username    = "SANYAM_K";
-    		$password    = "Welcome@123";
+    		$password    = "Welcome@234";
 		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs?ENT_OP='$ENT_OP'&ENT_LOC='$ENT_LOC'&ENT_ROOM='$ENT_ROOM'&ENT_BUILT='$ENT_BUILT'&ENT_SAL='$ENT_SAL'&COMMAND=getcount&AREA_NUM=$AREA_NUM&ROOMS=$ROOMS&BUILT_YEAR=$BUILT_YEAR&LOWSAL=$LOWSAL&HIGHSAL=$HIGHSAL";
 		
 		//$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013.xsjs?cmd=$com&getRooms=$room&getBuilt=$year&getLoc=$loc";
@@ -215,7 +215,7 @@ if($method == 'POST')
 		
 		
 		$username    = "SANYAM_K";
-    		$password    = "Welcome@123";
+    		$password    = "Welcome@234";
     		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/deal_info.xsjs?COMMAND=$com&EMAIL=$Emailid&CUST_NAME=$name&AREA_NUM='$area_num'&ROOMS='$rooms'&BUILT_YEAR='$builtyear'&APP_DATE=$app_date&APP_TIME=$app_time";
 		$app_date = date_create($app_date);
 		$app_time = date_create($app_time);
@@ -272,7 +272,7 @@ if($method == 'POST')
 		$AGE3 = $json->queryResult->parameters->AGE3;
 		
 		$username    = "SANYAM_K";
-    		$password    = "Welcome@123";
+    		$password    = "Welcome@234";
     		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs?ENT_OP='0'&ENT_LOC='0'&ENT_ROOM='0'&ENT_BUILT='0'&ENT_SAL='0'&COMMAND=getschool&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0&AGE1=$AGE1&AGE2=$AGE2&AGE3=$AGE3";
 		
 		$ch      = curl_init( $json_url );
@@ -317,7 +317,7 @@ if($method == 'POST')
 		
 		
 		$username    = "SANYAM_K";
-    		$password    = "Welcome@123";
+    		$password    = "Welcome@234";
     		$json_url    = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs?ENT_OP='0'&ENT_LOC='0'&ENT_ROOM='0'&ENT_BUILT='0'&ENT_SAL='0'&COMMAND=getschoolloc&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0&AGE1=$AGE1&AGE2=$AGE2&AGE3=$AGE3&RATING=$rating";
 		
 		$ch      = curl_init( $json_url );
