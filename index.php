@@ -27,7 +27,7 @@ if($method == 'POST')
 		//if (in_array($ROOMS, $userespnose)) {$ROOMS = 0;}
 		
 		$username    = "SANYAM_K";
-    		$password    = "Welcome@123";
+    		$password    = "Welcome@234";
 		//$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/HADS_2013_DYN.xsjs?ENT_OP=WHICH&ENT_LOC=LOCATION&ENT_ROOM=BEDROOM&ENT_BUILT=0&ENT_SAL=0&COMMAND=locality&AREA_NUM=0&ROOMS=5&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0";
 		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs?ENT_OP=$ENT_OP&ENT_LOC='$ENT_LOC'&ENT_ROOM='$ENT_ROOM'&ENT_BUILT='0'&ENT_SAL='0'&COMMAND=$com&AREA_NUM=0&ROOMS=$ROOMS&BUILT_YEAR=0&LOWSAL=0&HIGHSAL=0";
 		
