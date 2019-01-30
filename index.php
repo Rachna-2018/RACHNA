@@ -77,7 +77,7 @@ if($method == 'POST')
     		$password    = "Welcome@234";
 		//$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs?ENT_OP=%27MANY%27&ENT_LOC=%27LOCATION%27&ENT_ROOM=%270%27&ENT_BUILT=%270%27&ENT_SAL=%27INCOME%27&COMMAND=gethousesal&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=1000&HIGHSAL=2000";
     		$json_url = "http://74.201.240.43:8000/ChatBot/Sample_chatbot/Dyn_xsjs_chatbot.xsjs?ENT_OP='$ENT_OP'&ENT_LOC='$ENT_LOC'&ENT_ROOM='0'&ENT_BUILT='0'&ENT_SAL='$ENT_SAL'&COMMAND=$com&AREA_NUM=0&ROOMS=0&BUILT_YEAR=0&LOWSAL=$LOWSAL&HIGHSAL=$HIGHSAL";
-		echo $json_url;
+		//echo $json_url;
 		$ch      = curl_init( $json_url );
     		$options = array(
         	CURLOPT_SSL_VERIFYPEER => false,
